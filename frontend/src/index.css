@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --error-color: #e74c3c;
+    --success-color: #27ae60;
+    --border-color: #ddd;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 20px; /* Add padding to the body */
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+  }
+  
+  h1, h2, h3 {
+    color: var(--primary-color);
+  }
+  
+  /* Form Styles */
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Transaction History Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  th {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Settlement View */
+  .settlement-view {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .outstanding-balance {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  /* Callback Simulator */
+  .callback-simulator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  
+    .container {
+      width: 95%;
+    }
+  
+    table {
+      font-size: 14px;
+    }
+  
+    th, td {
+      padding: 8px;
+    }
+  }
+  
+  /* Utility Classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  .error {
+    color: var(--error-color);
+    font-weight: bold;
+  }
+  
+  .success {
+    color: var(--success-color);
+    font-weight: bold;
+  }
+  
