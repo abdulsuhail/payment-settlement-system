@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { Transaction } from '../types/Transaction';
 
-const API_URL = 'http://localhost:8080';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';;
 
 export const createTransaction = async (transactionData: Partial<Transaction>) => {
   const response = await axios.post(`${API_URL}/transactions`, transactionData);
