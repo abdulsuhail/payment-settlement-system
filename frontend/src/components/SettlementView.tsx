@@ -33,6 +33,7 @@ const SettlementView: React.FC = () => {
     <div>
       <h2>Settlement View</h2>
       <p>Outstanding Balance: ${outstandingBalance.toFixed(2)}</p>
+      <p>Note : Currently shows total amount in Processing state</p>
       <button onClick={handleSettle}>Settle Balance</button>
     </div>
   );

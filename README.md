@@ -12,7 +12,9 @@ This project is a simple payment and settlement system with a React TypeScript f
   - [Running the Application](#running-the-application)
   - [API Endpoints](#api-endpoints)
   - [Testing](#testing)
+  - [Database choice](#database-choice)
   - [Backend Deployment](#backend-deployment)
+  - [Frontend Deployment](#frontend-deployment)
 ---
 
 ## Prerequisites
@@ -85,8 +87,8 @@ The frontend application should now be running on `http://localhost:3000`.
 - `POST /transactions/settle`: Settle all pending transactions
 - `POST /transactions/callback`: Simulate a transaction status update
 
-## Testing
 
+## Testing
 
 1. Open Postman: Launch the Postman application on your computer.
 2. Go to Collections: In the left sidebar, click on the Collections tab to view your existing collections.
@@ -95,12 +97,31 @@ The frontend application should now be running on `http://localhost:3000`.
     * In the import dialog, either drag and drop your postman_collection.json file into the designated area or click on Choose Files to browse for the file on your computer.
     * After selecting the file, click on the Import button to load the collection into Postman.
 4. After importing, find your newly added collection in the Collections tab and click on it to expand.
+   * Run the callback API defined to simulate the callback functionality
 5. Click on the Run button, which can typically be found in the top right corner when the collection is selected. This will open the Collection Runner window.
 
+## Database choice
+Below are some of the reasons to choose SQL based database
+1. ACID Compliance
+2. Data Integrity
+3. Concurrency Control
+    * SQL databases typically have built-in mechanisms for managing concurrent transactions, such as locking and isolation levels. This ensures that multiple users can access and modify data simultaneously without compromising integrity.
+4. Complex Transactions
+Transaction services often involve complex business logic and multiple interrelated operations. SQL databases can handle these complexities efficiently through transactions that span multiple tables and relationships.
+
+
+***Currently, the deployment process is triggered based on which folder contains the code changes. For example, if there are updates in the frontend folder, only the frontend application will be deployed, and similarly, any changes made to the backend folder will trigger a deployment of the backend application. The following steps outline the process for initiating manual deployment triggers.***
 ## Backend Deployment 
 1. Go to the Actions tab of your GitHub repository.
 2. Select the workflow named "Deploy Backend to Heroku."
 3. Click the Run workflow button.
 4. Optionally, you can select a branch if prompted, then click Run workflow to start the deployment process manually.
-Note - Currently backend being hosted at https://payment-settlement-backend-98fb16555fe0.herokuapp.com
+**Hosted at https://payment-settlement-backend-98fb16555fe0.herokuapp.com**
+
+## Frontend Deployment 
+1. Go to the Actions tab of your GitHub repository.
+2. Select the workflow named "Deploy Frontend to Netlify."
+3. Click the Run workflow button.
+4. Optionally, you can select a branch if prompted, then click Run workflow to start the deployment process manually.
+**Hosted at https://66f757643931c32a26384805--fastidious-kulfi-a4b0ff.netlify.app**
 
