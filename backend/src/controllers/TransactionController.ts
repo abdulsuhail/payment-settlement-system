@@ -22,6 +22,7 @@ export class TransactionController {
       const id = await this.service.createTransaction(value);
       res.status(201).json({ id, message: 'Transaction created successfully' });
     } catch (error) {
+        logger.error(JSON.stringify(error));
       res.status(500).json({ error: 'Error creating transaction' });
     }
   }
@@ -36,6 +37,7 @@ export class TransactionController {
       const transactions = await this.service.getTransactions(value);
       res.json(transactions);
     } catch (error) {
+        logger.error(JSON.stringify(error));
       res.status(500).json({ error: 'Error fetching transactions' });
     }
   }
@@ -52,6 +54,7 @@ export class TransactionController {
   async handleCallback(req: Request, res: Response) {
     const { error, value } = validateCallback(req.body);
     if (error) {
+        logger.error(JSON.stringify(error));
       return res.status(400).json({ error: error.details[0].message });
     }
 
@@ -59,6 +62,7 @@ export class TransactionController {
       await this.service.updateTransactionStatus(value.transactionId, value.status as TransactionStatus);
       res.json({ message: 'Transaction status updated successfully' });
     } catch (error) {
+        logger.error(JSON.stringify(error));
       res.status(500).json({ error: 'Error updating transaction status' });
     }
   }

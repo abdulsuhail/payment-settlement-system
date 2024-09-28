@@ -40,8 +40,10 @@ const CallbackSimulator: React.FC = () => {
         required
       >
         <option value="">Select Status</option>
-        <option value="completed">Completed</option>
-        <option value="failed">Failed</option>
+        <option value="Completed">Completed</option>
+        <option value="Processing">Processing</option>
+        <option value="Failed">Failed</option>
+        <option value="Cancelled">Cancelled</option>
       </select>
       <button type="submit">Simulate Callback</button>
     </form>

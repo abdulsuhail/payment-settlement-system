@@ -11,7 +11,7 @@ const SettlementView: React.FC = () => {
 
   const fetchOutstandingBalance = async () => {
     try {
-      const transactions = await getTransactions({ status: 'pending' });
+      const transactions = await getTransactions({ status: 'Processing' });
       const balance = transactions.reduce((sum: any, t: { amount: any; }) => sum + t.amount, 0);
       setOutstandingBalance(balance);
     } catch (error) {

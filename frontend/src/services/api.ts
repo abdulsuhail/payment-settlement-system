@@ -12,7 +12,7 @@ export const createTransaction = async (transactionData: Partial<Transaction>) =
 
 // Need to fix logic for filters
 export const getTransactions = async (filters: any) => {
-  const response = await axios.get(`${API_URL}/transactions`);
+  const response = await axios.get(`${API_URL}/transactions`, { params: filters });
   return response.data;
 };
 

@@ -7,9 +7,9 @@ const TransactionHistory: React.FC = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [filters, setFilters] = useState({
     startDate: '1990-01-01',
-    endDate: '2024-09-27',
-    minAmount: 1,
-    maxAmount: 1000000
+    endDate: '',
+    minAmount: '',
+    maxAmount: ''
   });
 
   useEffect(() => {
@@ -18,11 +18,19 @@ const TransactionHistory: React.FC = () => {
 
   const fetchTransactions = async () => {
     try {
-      const data = await getTransactions(filters);
+        const validFilters = removeEmptyFilters(filters);
+      const data = await getTransactions(validFilters);
       setTransactions(data);
     } catch (error) {
       alert('Error fetching transactions');
     }
+  };
+
+  const removeEmptyFilters = (filterObj: any) => {
+    const filteredObj = Object.fromEntries(
+      Object.entries(filterObj).filter(([_, v]) => v != null && v !== '')
+    );
+    return filteredObj;
   };
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {

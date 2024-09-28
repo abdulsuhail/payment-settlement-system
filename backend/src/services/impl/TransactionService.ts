@@ -3,6 +3,7 @@ import { Transaction } from '../../models/Transaction';
 import { ITransactionRepository } from '../../repositories/ITransactionRepository';
 import { ITransactionService } from '../ITransactionService';
 import { TransactionStatus } from '../../types/TransactionStatus';
+import logger from '../../utils/logger';
 
 export class TransactionService implements ITransactionService {
   private repository: ITransactionRepository;

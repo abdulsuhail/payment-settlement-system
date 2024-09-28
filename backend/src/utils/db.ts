@@ -1,4 +1,3 @@
-// src/utils/db.ts
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 import { TransactionStatus } from '../types/TransactionStatus';
@@ -19,7 +18,7 @@ export async function initDb() {
       recipient TEXT,
       amount REAL,
       description TEXT,
-      status TEXT CHECK(status IN ('${TransactionStatus.PENDING}', '${TransactionStatus.COMPLETED}', '${TransactionStatus.FAILED}', '${TransactionStatus.SETTLED}')),
+      status TEXT CHECK(status IN ('${TransactionStatus.INITIATED}', '${TransactionStatus.PROCESSING}', '${TransactionStatus.FAILED}', '${TransactionStatus.CANCELLED}','${TransactionStatus.COMPLETED}')),
       createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
     )
   `);

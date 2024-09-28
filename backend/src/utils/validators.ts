@@ -18,7 +18,8 @@ export const validateFilters = (data: any) => {
     startDate: Joi.date().iso(),
     endDate: Joi.date().iso().min(Joi.ref('startDate')),
     minAmount: Joi.number().positive(),
-    maxAmount: Joi.number().positive().min(Joi.ref('minAmount'))
+    maxAmount: Joi.number().positive().min(Joi.ref('minAmount')),
+    status: Joi.string().valid(...Object.values(TransactionStatus))
   });
 
   return schema.validate(data);

@@ -4,4 +4,5 @@ frontend/build/
 backend/.DS_Store
 backend/database.sqlite
 backend/debug.log
+backend/dist
 .DS_Store
