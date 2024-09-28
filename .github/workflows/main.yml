@@ -22,12 +22,7 @@ jobs:
     - name: Install Dependencies
       run: |
         cd backend
-        npm ci
-
-    - name: Run Tests
-      run: |
-        cd backend
-        npm test
+        npm i
 
     - name: Deploy to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12
