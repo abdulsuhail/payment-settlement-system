@@ -12,6 +12,7 @@ This project is a simple payment and settlement system with a React TypeScript f
   - [Running the Application](#running-the-application)
   - [API Endpoints](#api-endpoints)
   - [Testing](#testing)
+  - [Backend Deployment](#backend-deployment)
 ---
 
 ## Prerequisites
@@ -95,3 +96,11 @@ The frontend application should now be running on `http://localhost:3000`.
     * After selecting the file, click on the Import button to load the collection into Postman.
 4. After importing, find your newly added collection in the Collections tab and click on it to expand.
 5. Click on the Run button, which can typically be found in the top right corner when the collection is selected. This will open the Collection Runner window.
+
+## Backend Deployment 
+1. Go to the Actions tab of your GitHub repository.
+2. Select the workflow named "Deploy Backend to Heroku."
+3. Click the Run workflow button.
+4. Optionally, you can select a branch if prompted, then click Run workflow to start the deployment process manually.
+Note - Currently backend being hosted at https://payment-settlement-backend-98fb16555fe0.herokuapp.com
+
