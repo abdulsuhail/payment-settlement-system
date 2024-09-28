@@ -123,5 +123,5 @@ Transaction services often involve complex business logic and multiple interrela
 2. Select the workflow named "Deploy Frontend to Netlify."
 3. Click the Run workflow button.
 4. Optionally, you can select a branch if prompted, then click Run workflow to start the deployment process manually.
-**Hosted at https://66f757643931c32a26384805--fastidious-kulfi-a4b0ff.netlify.app**
+**Hosted at https://66f761f8ba237130552652fc--fastidious-kulfi-a4b0ff.netlify.app/**
 
